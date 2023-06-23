@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">YoutubeMP3Downloader</string>
+    <string name="content_description_link_icon">Link icon</string>
+    <string name="content_description_close_icon">Remove youtube link.</string>
+    <string name="youtube_link">YouTube Link</string>
+    <string name="content_description_folder_name">Folder name</string>
+    <string name="destination_folder">Destination Folder</string>
+    <string name="text_field_info">Text field info</string>
+    <string name="all_permission_are_granted">All permission are granted!</string>
+    <string name="storage_access_is_required_for_this_application_please_grant_the_permission">Storage access is required for this application, please grant the permission.</string>
+    <string name="please_grant_all_the_permission">Please grant all the permission.</string>
+    <string name="thumbnail_image">Thumbnail Image</string>
+    <string name="trailing_icon">Trailing icon</string>
+    <string name="where_you_want_to_save_the_mp3">Where you want to save the MP3</string>
+</resources>
