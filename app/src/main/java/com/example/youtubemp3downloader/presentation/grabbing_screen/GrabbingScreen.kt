@@ -123,6 +123,7 @@ fun GrabbingScreen(
                     progress = viewModel.progress,
                     progressColor = Color(0XFFFFBB0E)
                 ) {
+                    viewModel.changeCurrentAction(CurrentAction.Saving)
                     scope.launch {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
                             viewModel.moveFileToExternalStorageAndroidQ(context.contentResolver)

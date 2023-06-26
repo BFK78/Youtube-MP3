@@ -45,7 +45,7 @@ class GrabbingScreenViewModel @Inject constructor(
     var progress by mutableStateOf(0f)
         private set
 
-    var youtubeLink by mutableStateOf("")
+    var youtubeLink by mutableStateOf("https://www.youtube.com/watch?v=TQQlZhbC5ps")
         private set
 
     var filePath by mutableStateOf("")
@@ -73,6 +73,10 @@ class GrabbingScreenViewModel @Inject constructor(
 
     fun onVideoLocationChange(file: File) {
         videoLocation = file
+    }
+
+    fun changeCurrentAction(action: CurrentAction) {
+        currentAction = action
     }
 
     suspend fun getVideoInformation(): Boolean = withContext(Dispatchers.IO) {
@@ -137,8 +141,8 @@ class GrabbingScreenViewModel @Inject constructor(
 
     fun downloadFile() = viewModelScope.launch(Dispatchers.IO) {
         try {
-
             currentAction = CurrentAction.Download
+
             val client = OkHttpClient()
             val request = Request.Builder()
                 .url(videoInformation.sourceURL!!)
@@ -188,8 +192,7 @@ class GrabbingScreenViewModel @Inject constructor(
             progress = 0f
             totalFileSize = ""
             downloadedSize = ""
-
-            currentAction = CurrentAction.Saving
+            delay(3000)
 
             val sourceFile = saveMP3File!!
             val destinationDirectory =
@@ -250,8 +253,8 @@ class GrabbingScreenViewModel @Inject constructor(
         progress = 0f
         totalFileSize = ""
         downloadedSize = ""
+        delay(3000)
 
-        currentAction = CurrentAction.Saving
 
         val sourceFile = saveMP3File!!
 
